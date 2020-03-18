@@ -1,1 +1,1 @@
-Repository with important problems in Data Structures
+Repository with important problems with Data Structures concepts
