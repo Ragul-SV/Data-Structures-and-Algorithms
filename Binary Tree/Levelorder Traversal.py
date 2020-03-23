@@ -11,8 +11,20 @@ def printlevel(root,level):
         printlevel(root.right,level-1)
     
 def levelOrder( root ):
-    # Code here
+    #---------------------------------Recursive-----------------------------------#
     h = height(root)
     
     for i in range(h):
         printlevel(root,i)
+    
+    #---------------------------------Iterative-----------------------------------#
+    
+    s = []
+    q = [root]
+    while q:
+        curnode = q.pop(0)
+        print(curnode.data,end=" ")
+        if curnode.left:
+            q.append(curnode.left)
+        if curnode.right:
+            q.append(curnode.right)
