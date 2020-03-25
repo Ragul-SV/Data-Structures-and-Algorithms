@@ -1,3 +1,4 @@
+//-----------------------------------------------------METHOD 1--------------------------------------------------------------//
 void ancestors(struct Node* root,int target,vector<int> vec)
 {
     if(root!=NULL)
