@@ -2,7 +2,6 @@ void ancestors(struct Node* root,int target,vector<int> vec)
 {
     if(root!=NULL)
     {   
-        
         if(root->data==target)
         {
             for(int i=vec.size()-1;i>=0;i--)
