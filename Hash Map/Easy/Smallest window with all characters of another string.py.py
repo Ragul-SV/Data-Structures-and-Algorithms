@@ -9,7 +9,7 @@ def smallestWindow(s,p):
             dp[p[i]] = 1
         else:
             dp[p[i]] += 1
-            
+          
     start = 0
     start_index = -1
     min_length = 2**31
