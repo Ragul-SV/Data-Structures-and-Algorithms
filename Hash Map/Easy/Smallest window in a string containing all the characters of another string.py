@@ -22,7 +22,6 @@ def smallestWindow(s,p):
     
         if s[i] in dp and ds[s[i]]<=dp[s[i]]:
             c+=1
-        
         if c==lenp:
             while s[start] not in dp or ds[s[start]]>dp[s[start]]:
                 if s[start] in dp and ds[s[start]]>dp[s[start]]:
