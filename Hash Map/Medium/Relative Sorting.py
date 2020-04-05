@@ -17,7 +17,5 @@ for cases in range(t):
             del d[arr2[i]]
     for i in sorted(d.keys()):
         for j in range(d[i]):
-            l.append(i)
-    for i in l:
-        print(i,end=" ")
+            print(i,end=" ")
     print()
