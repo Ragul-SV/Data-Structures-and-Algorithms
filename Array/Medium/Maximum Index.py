@@ -1,4 +1,3 @@
-t = int(input())
 for cases in range(t):
     n = int(input())
     arr = list(map(int,input().strip().split()))
@@ -11,10 +10,9 @@ for cases in range(t):
     for i in range(n-2,-1,-1):
         r[i] = max(arr[i],r[i+1])
     max_length = -1
-    print(l,r)
     i,j = 0,0
     while i<n and j<n:
-        if l[i]<r[j]:
+        if l[i]<=r[j]:
             max_length = max(max_length,j-i)
             j+=1
         else:
