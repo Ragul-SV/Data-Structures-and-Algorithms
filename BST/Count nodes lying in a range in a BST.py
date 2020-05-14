@@ -1,3 +1,4 @@
+#------------------------------------------------O(H+K)------H(Height)---K(No.of Nodes lying in the range)--------------------------#
 def getCountOfNode(root,l,h):
     ##Your code here
     if not root:
@@ -8,3 +9,4 @@ def getCountOfNode(root,l,h):
         return getCountOfNode(root.right,l,h)
     elif root.data>h:
         return getCountOfNode(root.left,l,h)
+    
