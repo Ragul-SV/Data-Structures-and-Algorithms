@@ -1,3 +1,9 @@
+#----------------------------------------------O(N)----There are total three traversals of the tree-----------------------------------------------#
+def isSibling(root,a,b):
+    if not root:
+        return False
+    return (root.left==a and root.right==b) or (root.left==b and root.right==a) or isSibling(root.left,a,b) or isSibling(root.right,a,b)
+
 def vertical(root,value,level,depth,arr):
     if root:
         if root.left and root.left.data == value:
@@ -16,9 +22,4 @@ def isCousin(root,a,b):
     vertical(root,b,0,0,arr2)
     if not arr1 or not arr2:
         return False
-    elif arr1[0]==arr2[0]:
-        if arr1[1]==arr2[1]:
-            return False
-        return True
-    else:
-        return False
+    return arr1[0]==arr2[0] and isSibling(root,arr1[1],arr2[1])
