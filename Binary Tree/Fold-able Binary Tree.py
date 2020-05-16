@@ -11,8 +11,8 @@ def IsFoldable(root):
         q.append(curnode.left)
         q.append(curnode.right)
         while q:
-            l = q.pop(0)
             r = q.pop(0)
+            l = q.pop(0)
             if not l.left and not r.right and not l.right and not r.left:
                 continue
             elif l.left and r.right and not l.right and not r.left:
