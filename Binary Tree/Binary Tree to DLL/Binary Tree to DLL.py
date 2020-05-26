@@ -15,6 +15,6 @@ def btodll(arr):
     
 def bToDLL(root):
     # do Code here
-    arr = []
+    arr = [] 
     inorder(root,arr)
     return btodll(arr)
