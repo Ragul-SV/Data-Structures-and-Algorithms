@@ -6,7 +6,7 @@ def build(inorder,postorder,l,h,preindex):
     preindex[0]+=1
     if l==h:
         return root
-    i = l
+    i = l 
     for i in range(l,h+1):
         if root.data==inorder[i]:
             break
