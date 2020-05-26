@@ -6,7 +6,7 @@ def construct(pre,preLN,n,index):
     root = Node(pre[index[0]])
     index[0]+=1
     root.left = construct(pre,preLN,n,index)
-    index[0]+=1
+    index[0]+=1 
     root.right = construct(pre,preLN,n,index)
     return root
     
