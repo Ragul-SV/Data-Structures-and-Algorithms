@@ -9,7 +9,7 @@ def levelorder(root,level,d):
         levelorder(root.right,level+1,d)
         
 def reverseAlternate(root):
-    d = dict()
+    d = dict() 
     levelorder(root,0,d)
     for arr in d.values():
         n = len(arr)
