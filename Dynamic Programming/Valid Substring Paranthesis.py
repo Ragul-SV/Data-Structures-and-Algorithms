@@ -6,7 +6,7 @@ def isValid(s):
             q.append(s[i])
         elif q and q[-1]=='(':
             q.pop()
-        else:
+        else: 
             return False
     return len(q)==0
 
