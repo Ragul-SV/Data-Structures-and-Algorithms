@@ -9,13 +9,11 @@ class Graph:
 			self.graph[u].append(v)
 	
 	def DFSUtil(self,v,visited):
-		visited.add(v)
-		print(v,end=" ")
-		if v in self.graph:
+		if v not in visited:
+			visited.add(v)
+			print(v,end=" ")
 			for i in self.graph[v]:
-				# print("v:",v,"i:",i)
-				if i not in visited:
-					self.DFSUtil(i,visited)
+				self.DFSUtil(i,visited)
 		
 	def DFS(self,v):
 		visited = set()
