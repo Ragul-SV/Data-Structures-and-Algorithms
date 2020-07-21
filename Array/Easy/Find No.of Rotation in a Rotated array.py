@@ -1,3 +1,4 @@
+#-------------------------------O(N)------------------------------------------#
 t = int(input())
 for cases in range(t):
     n = int(input())
@@ -15,3 +16,20 @@ for cases in range(t):
                 break
         if flag==0:
             print(0)
+
+#------------------------------O(LogN)----------------------------------------#
+def NumberOfRotations(arr,n):
+    l,r = 0,n-1
+    while l<=r:
+        mid = (l+r)//2
+        if l==r:
+            return l
+        if mid>l and arr[mid]<arr[mid-1]:
+            return mid
+        if mid<r and arr[mid]>arr[mid+1]:
+            return mid+1
+        if arr[r]>arr[mid]:
+            r = mid-1
+        else:
+            l = mid+1
+    return 0
