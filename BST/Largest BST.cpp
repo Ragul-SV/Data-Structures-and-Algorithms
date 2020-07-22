@@ -8,7 +8,6 @@ struct Info
     bool isBST; 
 }; 
   
-
 Info largest(Node* root) 
 { 
     if (root == NULL) 
