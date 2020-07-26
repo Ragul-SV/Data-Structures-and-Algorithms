@@ -7,7 +7,7 @@ def findOddPair(A, N) :
         if (A[i] % 2 == 0) : 
             count+=1
       
-    # return number of odd pair  
+    # return number of odd-even pair  
     return count * (N - count)  
   
 # Driver Code 
