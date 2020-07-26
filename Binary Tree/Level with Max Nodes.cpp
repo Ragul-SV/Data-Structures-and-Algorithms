@@ -33,3 +33,23 @@ int maxNodeLevel(Node *root)
     }
     return maxlevel;
 }
+/* Using Queue in Python
+def maxLevel(root):
+	q = [root]
+	maxlevel = 0
+	maxi = 0
+	level = -1
+	while q:
+		n = len(q)
+		c = n
+		level+=1
+		if c>maxi:
+			maxi = c
+			maxlevel = level
+		for i in range(n):
+			cur = q.pop(0)
+			if cur.left:
+				q.append(cur.left)
+			else:
+				q.append(cur.right)
+*/
