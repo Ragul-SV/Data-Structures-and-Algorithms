@@ -5,12 +5,13 @@ def inorder(root,arr):
         inorder(root.right,arr)
         
 def btodll(arr):
-    head = arr[0]
+    head = Node(arr[0])
     temp = head
     for i in range(1,len(arr)):
-        temp.right = arr[i]
+        temp.right = Node(arr[i])
+        prev = temp
         temp = temp.right
-        temp.left = arr[i-1]
+        temp.left = prev
     return head
     
 def bToDLL(root):
