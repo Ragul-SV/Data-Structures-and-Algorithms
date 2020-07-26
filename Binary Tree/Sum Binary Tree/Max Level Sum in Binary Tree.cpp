@@ -31,3 +31,20 @@ int maxLevelSum(Node *root)
     }
     return maxsum;
 }
+/*
+def maxLevelSum(root):
+    q = [root]
+    res = -2**31
+    while q:
+        n = len(q)
+        s = 0
+        for i in range(n):
+            cur = q.pop(0)
+            s+=cur.data
+            if cur.left:
+                q.append(cur.left)
+            if cur.right:
+                q.append(cur.right)
+        res = max(res,s)
+    return res
+*/
