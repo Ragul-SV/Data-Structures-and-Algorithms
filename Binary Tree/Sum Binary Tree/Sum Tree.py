@@ -13,25 +13,26 @@ def isSumTree(root):
     return (root.data==(sumtree(root.left)+sumtree(root.right))) and isSumTree(root.left) and isSumTree(root.right)
 #---------BOTTOM UP APPROACH------O(N)-------------------------------------------------------------------------------------#
 def isLeaf(root):
+    if not root:
+        return False
     return not root.left and not root.right
     
 def isSumTree(root):
     if not root or isLeaf(root):
-        return True
-    if root.left and root.right:
+        return 1
+    if isSumTree(root.left) and isSumTree(root.right):
         if not root.left:
-            ls = False
+            ls = 0
         elif isLeaf(root.left):
             ls = root.left.data
         else:
             ls = 2*(root.left.data)
-        
+            
         if not root.right:
-            rs = False
+            rs = 0
         elif isLeaf(root.right):
             rs = root.right.data
         else:
             rs = 2*(root.right.data)
-        
-        return root.data == ls+rs
-    return False
+        return (root.data == (ls+rs))
+    return 0
