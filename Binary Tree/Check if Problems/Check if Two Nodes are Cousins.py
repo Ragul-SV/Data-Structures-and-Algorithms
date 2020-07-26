@@ -1,12 +1,8 @@
-#----------------------------------------------O(N)----There are total three traversals of the tree-----------------------------------------------#
+#----------------------------------------------O(N)----There are total three traversals of the tree------------------------------------------------------------#
 def isSibling(root,a,b):
     if not root:
         return False
-    if not root.left or not root.right:
-        return
-    return (root.left.data==a and root.right.data==b) or \
-    (root.left.data==b and root.right.data==a) or \
-    isSibling(root.left,a,b) or isSibling(root.right,a,b)
+    return (root.left.data==a and root.right.data==b) or (root.left.data==b and root.right.data==a) or isSibling(root.left,a,b) or isSibling(root.right,a,b)
         
     
 def vertical(root,value,level):
