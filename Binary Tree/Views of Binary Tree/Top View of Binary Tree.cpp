@@ -19,3 +19,19 @@ void topView(struct Node *root)
     printTopView(root,0,0,mp);
     for(it=mp.begin();it!=mp.end();it++) cout<<(it->second).first<<" ";
 }
+/*
+def top(root,level,depth,d):
+    if root:
+        if level not in d:
+            d[level] = [root.data,depth]
+        elif depth<d[level][1]:
+            d[level] = [root.data,depth]
+        top(root.left,level-1,depth+1,d)
+        top(root.right,level+1,depth+1,d)
+    
+def topView(root):
+    d = dict()
+    top(root,0,0,d)
+    for i in sorted(d):
+        print(d[i][0],end=" ")
+*/
