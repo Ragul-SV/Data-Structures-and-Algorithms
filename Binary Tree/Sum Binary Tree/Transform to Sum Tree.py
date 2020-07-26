@@ -3,4 +3,6 @@ def toSumTree(root) :
         return 0
     l = toSumTree(root.left)
     r = toSumTree(root.right)
-    return l + r + root.data
+    old_val = root.data
+    root.data  = l+r
+    return root.data + old_val
