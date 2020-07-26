@@ -4,14 +4,14 @@ def zigZagTraversal(root):
     s2 = []
     while s1 or s2:
         while s1:
-            curnode = s1.pop()
+            curnode = s1.pop(0)
             print(curnode.data,end=" ")
             if curnode.left:
                 s2.append(curnode.left)
             if curnode.right:
                 s2.append(curnode.right)
         while s2:
-            curnode =s2.pop()
+            curnode =s2.pop(0)
             print(curnode.data,end=" ")
             if curnode.right:
                 s1.append(curnode.right)
