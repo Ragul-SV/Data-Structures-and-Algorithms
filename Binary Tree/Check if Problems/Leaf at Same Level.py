@@ -5,7 +5,7 @@ def findlevel(root,level,arr):
         findlevel(root.left,level+1,arr)
         findlevel(root.right,level+1,arr)
 
-def check(node):
+def check(root):
     arr = []
     flevel = findlevel(root,0,arr)
     return len(set(arr))==1
