@@ -1,5 +1,6 @@
 def alternate(root,level,D):
     if root:
+        try:
             d[level].append(root.data)
         except:
             d[level] = [root.data]
