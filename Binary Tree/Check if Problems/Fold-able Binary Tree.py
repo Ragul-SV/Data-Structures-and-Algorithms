@@ -1,3 +1,16 @@
+#------------------------------------------------METHOD1---------------------------------------------------------------#
+def IsFoldable(root):
+    if not root:
+        return True
+    return IsFoldableUtil(root.left,root.right)
+    
+def IsFoldableUtil(a,b):
+    if not a and not b:
+        return True
+    if not a or not b:
+        return False
+    return IsFoldableUtil(a.left,b.right) and IsFoldableUtil(a.right,b.left)
+#------------------------------------------------METHOD2---------------------------------------------------------------#
 def IsFoldable(root):
     if not root:
         return True
