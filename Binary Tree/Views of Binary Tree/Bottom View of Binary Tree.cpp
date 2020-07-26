@@ -19,3 +19,21 @@ void bottomView(Node *root)
        cout<<(it->second).first<<" ";
    }
 }
+
+/*def bottom(root,level,depth,d):
+    if root:
+        if level not in d:
+            d[level] = [root.data,depth]
+        elif depth>=d[level][1]:
+            d[level] = [root.data,depth]
+        bottom(root.left,level-1,depth+1,d)
+        bottom(root.right,level+1,depth+1,d)
+        
+def bottomView(root):
+    d = dict()
+    bottom(root,0,0,d)
+    res = []
+    for i in sorted(d):
+        res.append(d[i][0])
+    return res
+    */
