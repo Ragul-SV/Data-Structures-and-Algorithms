@@ -1,3 +1,4 @@
+#---------------------------------------O(NKLogK)------N:Total no. of elements-----K:No. of arrays--------------------------------# 
 class HeapNode:
     def __init__(self,data,i,j):
         self.data = data
