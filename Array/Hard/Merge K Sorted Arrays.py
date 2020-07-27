@@ -1,37 +1,47 @@
-def merge(arr1,arr2,n1,n2,out):
-    i,j,k = 0,0,0
-    while i<n1 and j<n2:
-        if arr1[i]<arr2[j]:
-            out[k] = arr1[i]
-            i+=1
-        else:
-            out[k] = arr2[j]
-            j+=1
-        k+=1
-    while i<n1:
-        out[k] = arr1[i]
-        i+=1
-        k+=1
-    while j<n2:
-        out[k] = arr2[j]
-        j+=1
-        k+=1
-
-def mergeK(arr,i,j,k,res):
-    if i==j:
-        for p in range(k):
-            res[p] = arr[i][p]
-        return
-    if (j-i) == 1:
-        merge(arr[i],arr[j],k,k,res)
-        return
-    out1 = [0]*(k*(((i+j)//2)-i+1))
-    out2 = [0]*(k*(j-((i+j)//2)))
-    mergeK(arr,i,(i+j)//2,k,out1)
-    mergeK(arr,((i+j)//2)+1,j,k,out2)
-    merge(out1,out2,(k*(((i+j)//2)-i+1)),(k*(j-((i+j)//2))),res)
+class HeapNode:
+    def __init__(self,data,i,j):
+        self.data = data
+        self.i = i  #index of array from which the element is taken
+        self.j = j  #index of next element in the array
     
-def mergeKArrays(arr,k):
-    res = [0]*(k*k)
-    mergeK(arr,0,k-1,k,res)
+class Heap:
+    def __init__(self,arr,n):
+        self.heap = arr
+        self.size = n
+        i = (n-1)//2
+        while i>=0:
+            self.min_heapify(i)
+            i-=1
+    
+    def min_heapify(self,i):
+        l = 2*i+1
+        r = 2*i+2
+        small = i
+        if l<self.size and self.heap[l].data<self.heap[i].data:
+            small = l
+        if r<self.size and self.heap[r].data<self.heap[small].data:
+            small = r
+        if small!=i:
+            self.heap[small],self.heap[i] = self.heap[i],self.heap[small]
+            self.min_heapify(small)
+            
+def mergeKArrays(arr,n):
+    res_size = 0
+    h_arr = []
+    for i in range(n):
+        node = HeapNode(arr[i][0],i,1)
+        h_arr.append(node)
+        res_size+=len(arr[i])
+    min_heap = Heap(h_arr,n)
+    res = [0]*res_size
+    for i in range(res_size):
+        root = min_heap.heap[0]
+        res[i] = root.data
+        if root.j<len(arr[root.i]):
+            root.data = arr[root.i][root.j]
+            root.j+=1
+        else:
+            root.data = 2**31
+        min_heap.heap[0] = root
+        min_heap.min_heapify(0)
     return res
