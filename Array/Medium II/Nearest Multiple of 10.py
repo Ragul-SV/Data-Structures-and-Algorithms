@@ -5,10 +5,10 @@ for cases in range(t):
     if int(s[k])==0:
         print(s)
     elif int(s[k])<=5:
-        s = s[:k]+'0'+s[k+1:]
+        s = s[:k]+'0'
         print(s)
     elif int(s[k])>5:
-        s = s[:k]+'0'+s[k+1:]
+        s = s[:k]+'0'
         flag = 1
         while k>=1 and flag==1:
             k-=1
