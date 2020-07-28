@@ -4,7 +4,7 @@ for cases in range(t):
     arr = list(map(int,input().strip().split()))
     max_from_right = -1
     ans = []
-    for i in range(n-1,-1,-1):
+    for i in range(n-1,-1,-1):  
         if arr[i]>=max_from_right:
             ans.append(arr[i])
         max_from_right = max(max_from_right,arr[i])
