@@ -11,7 +11,7 @@ def deletenode(root,key):
 			temp = root.right
 			root = None
 			return temp
-		elif nor root.right:
+		elif not root.right:
 			temp = root.left
 			root = None
 			return temp
