@@ -4,5 +4,5 @@ ListNode* swapPairs(ListNode* head) {
         ListNode* nxt = head->next;
         head->next = swapPairs(nxt->next);
         nxt->next = head;
-        return nxt;
+        return nxt; 
     }
